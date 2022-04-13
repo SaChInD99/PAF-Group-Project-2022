@@ -42,4 +42,25 @@
  <url-pattern>/FeedbackService/*</url-pattern>
 </servlet-mapping>
 
+<servlet>
+ <servlet-name>Jersey Web Application Powerstation</servlet-name>
+ <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+ <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+ <servlet-name>Jersey Web Application Feedback</servlet-name>
+ <url-pattern>/PowerstationService/*</url-pattern>
+</servlet-mapping>
+
+<servlet>
+ <servlet-name>Jersey Web Application Bill</servlet-name>
+ <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+ <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+ <servlet-name>Jersey Web Application Feedback</servlet-name>
+ <url-pattern>/BillService/*</url-pattern>
+</servlet-mapping>
+
+
 </web-app>
