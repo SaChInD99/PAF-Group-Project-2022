@@ -65,8 +65,8 @@ public class Powerconsumption {
 				return "Error while connecting to the database for reading Consumption.";
 			}
 			// Prepare the html table to be displayed
-			output = "<table border='1'><tr><th>Customer ID</th><th>Present Reading</th>" + "<th>Previous Reading</th>"
-					+ "<th>Consumption Unit</th>" + "<th>Tax</th>" + "<th>Due Date</th>" ;
+			output = "<table border='1'><tr><th>Consumption ID</th><th>Customer ID</th>" + "<th>Present Reading</th>"
+					+ "<th>Previous reading</th>" + "<th>Consumption unit</th>" + "<th>Tax</th>" + "<th>Due Date</th>" ;
 
 			String query = "select * from consumption";
 			Statement stmt = con.createStatement();
@@ -77,7 +77,7 @@ public class Powerconsumption {
 				String CustomerID = rs.getString("CustomerID");
 				String Present_reading = rs.getString("Present_reading");
 				String previous_reading = rs.getString("previous_reading");
-				String Consumtionunit = rs.getString("Consumtionunit");
+				String Consumtionunit = rs.getString("Consumptionunit");
 				String Tax = rs.getString("Tax");
 				String Due_date = rs.getString("Due_date");
 
@@ -125,7 +125,7 @@ public class Powerconsumption {
 			preparedStmt.setString(6, tax);
 			preparedStmt.setString(7, date);
 
-			preparedStmt.setInt(8, Integer.parseInt(ID));
+			preparedStmt.setInt(7, Integer.parseInt(ID));
 			// execute the statement
 			preparedStmt.execute();
 			con.close();

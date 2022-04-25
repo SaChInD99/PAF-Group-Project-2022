@@ -57,8 +57,8 @@ public class PowerconsumptionService {
 		String Consumptionunit = consumptionObject.get("Consumptionunit").getAsString();
 		String Tax = consumptionObject.get("Tax").getAsString();
 		String Due_date = consumptionObject.get("Due_date").getAsString();
-		String output = consumptionObj.updateConsumption(ConsumptionID, CustomerID, Present_reading, Previous_reading, Consumptionunit,
-				Tax, Due_date );
+		String output = consumptionObj.updateConsumption(ConsumptionID, CustomerID, Present_reading, Previous_reading,
+				Consumptionunit, Tax, Due_date );
 		return output;
 	}
 
@@ -70,7 +70,7 @@ public class PowerconsumptionService {
 		// Convert the input string to an XML document
 		Document doc = Jsoup.parse(consumptionData, "", Parser.xmlParser());
 
-		// Read the value from the element <CustomerID>
+		// Read the value from the element <ConsumptionID>
 		String ConsumptionID = doc.select("ConsumptionID").text();
 		String output = consumptionObj.deleteConsumption(ConsumptionID);
 		return output;
